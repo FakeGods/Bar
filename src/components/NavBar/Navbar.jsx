@@ -1,18 +1,31 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
-import "./Navbar.css";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <header className="header">
-      <nav className="nav container">
-        <NavLink to="/" className="nav__logo">
+    <header className="fixed w-full top-0 left-0 bg-transparent z-50">
+      <nav className="flex items-center justify-between relative h-[var(--header-height)] mx-4">
+        <NavLink
+          to="/"
+          className="text-first-color transition-colors duration-400 font-second text-h2-font-size"
+        >
           Navigation Bar
         </NavLink>
 
-        <div className={"nav__menu"} id="nav-menu">
-          <ul className="nav__list">
+        <div
+          className={`flex items-center flex-shrink-0 ${
+            menuOpen ? "right-0" : "right-full"
+          } transition-all duration-300 fixed top-0 h-full bg-white w-64 px-4 pt-20`}
+          id="nav-menu"
+        >
+          <ul className="flex flex-col gap-10">
             <li className="nav__item">
               <NavLink to="/" className="nav__link">
                 Home
@@ -44,12 +57,16 @@ const Navbar = () => {
               </NavLink>
             </li>
           </ul>
-          <div className="nav__close" id="nav-close">
+          <div
+            className="nav__close absolute top-4 right-6 cursor-pointer"
+            id="nav-close"
+            onClick={toggleMenu}
+          >
             <IoClose />
           </div>
         </div>
 
-        <div className="nav__toggle" id="nav-toggle">
+        <div className="cursor-pointer" id="nav-toggle" onClick={toggleMenu}>
           <IoMenu />
         </div>
       </nav>
