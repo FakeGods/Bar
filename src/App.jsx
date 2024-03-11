@@ -1,5 +1,5 @@
 import "./App.css";
-import Nav from "./components/NavBar/Nav";
+import Nav from "./components/NavBar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
