@@ -1,4 +1,3 @@
-import "./App.css";
 import Navbar from "./components/NavBar/Nav";
 import Hero from "./components/Hero/Hero";
 import Footer from "./components/Footer/Footer";
