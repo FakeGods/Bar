@@ -4,10 +4,13 @@ import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
 
-export default function App() {
+const App = () => {
   return (
     <>
-      <Header />
+      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+        <Header />
+      </div>
     </>
   );
-}
+};
+export default App;
